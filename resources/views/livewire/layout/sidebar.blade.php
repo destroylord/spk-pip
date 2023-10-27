@@ -21,7 +21,7 @@ new class extends Component
             
             <li
                 class="sidebar-item active ">
-                <a href="index.html" class='sidebar-link'>
+                <a href="{{ route('admin.dashboard') }}" wire:navigate class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
@@ -55,11 +55,26 @@ new class extends Component
             </li>
             
             <li
-                class="sidebar-item">
+                class="sidebar-item has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-collection-fill"></i>
                     <span>PIP</span>
                 </a>
+
+                 <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        {{-- <a href="{{ route('admin.form-generator') }}" wire:navigate class="submenu-link">Konfigurasi form</a> --}}
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="#" class="submenu-link">Kandidat beasiswa</a>
+                        
+                    </li>
+                    
+                    
+                </ul>
             </li>
             
             <li
