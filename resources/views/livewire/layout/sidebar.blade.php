@@ -94,7 +94,7 @@ new class extends Component
                                         </div>
                                         <div class="modal-body">
                                             <p>
-                                               Apakah Anda yakin ingin keluar dari aplikasi?
+                                            Apakah Anda yakin ingin keluar dari aplikasi?
                                             </p>
                                         </div>
                                         <div class="modal-footer">

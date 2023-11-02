@@ -71,9 +71,9 @@
                 <x-input-error :messages="$errors->get('regency')" class="mt-2" />
             </mt-2>
         </div>
-       
+        {{-- data ayah component --}}
         <hr>
-        <h1 class="text-xl">Data Ayah</h1>
+        <h1 class="text-xl font-bold">Data Ayah</h1>
         <div class="mt-4">
             <x-input-label for="father_name">Nama</x-input-label>
             <x-text-input wire:model="father_name" class="block mt-1 w-full"/>
@@ -102,7 +102,8 @@
                 <x-input-error :messages="$errors->get('father_birth_date')" class="mt-2" />
             </div>
         </div>
-        <h1 class="text-xl">Data Ibu</h1>
+        {{-- data ibu component --}}
+        <h1 class="text-xl font-bold">Data Ibu</h1>
         <div class="mt-4">
             <x-input-label for="mother_name">Nama</x-input-label>
             <x-text-input wire:model="mother_name" class="block mt-1 w-full"/>
@@ -133,7 +134,7 @@
         </div>
     </div>
 
-    <div class="flex justify-center mt-4">
+    <div class="flex justify-start mt-4">
         <button class="disabled inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 active:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">Submit</button>
     </div>
 </form>
