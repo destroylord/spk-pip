@@ -1,15 +1,17 @@
-<form action="#" wire:submit="save">
+<form action="#" wire:submit.prevent="save">
+    @if ($currentStep === 1)
+    <h1 class="text-xl">Biodata Diri</h1>
     <div class="grid gap-4">
         <div class="mt-4">
             <x-input-label for="fullname">Nama Lengkap</x-input-label>
-            <x-text-input wire:model="form.fullname" id="fullname" class="block mt-1 w-full" placeholder="John Doe" type="text" name="fullname" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('form.fullname')" class="mt-2" />
+            <x-text-input wire:model="full_name" id="fullname" class="block mt-1 w-full" placeholder="John Doe" type="text" name="fullname" autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('full_name')" class="mt-2" />
         </div>
         <div class="mt-2">
             <x-input-label for="gender">Jenis Kelamin</x-input-label>
-            <input type="radio" name="gender" wire:model="gender">
+            <input type="radio" name="gender" wire:model="gender" value="L">
             <span class="ml-2 mr-4">Laki-laki</span>
-            <input type="radio" name="gender" wire:model="gender">
+            <input type="radio" name="gender" wire:model="gender" value="P">
             <span class="ml-2">Perempuan</span>
             <x-input-error :messages="$errors->get('gender')" class="mt-2" />
         </div>
@@ -17,7 +19,7 @@
             <x-input-label>Tempat Lahir</x-input-label>
             <div class="flex flex-row justify-content-between gap-4">
                 <div class="basis-1/2">
-                    <x-text-input type="text" class="block mt-1 w-full" wire:model="birth_place" placeholder="Bondowoso"/>
+                    <x-text-input type="text" class="block mt-1 w-full" wire:model="birth_place"  placeholder="Bondowoso"/>
                 </div>
                 <x-input-error :messages="$errors->get('birth_place')" class="mt-2" />
                 <div class="basis-1/4">
@@ -36,6 +38,7 @@
                 <option value="4">Budha</option>
                 <option value="5">Konghucu</option>
             </select>
+            <x-input-error :messages="$errors->get('religion')" class="mt-2" />
         </div>
         <div class="grid grid-cols-2 gap-4">
             <div class="mt-2">
@@ -71,6 +74,9 @@
                 <x-input-error :messages="$errors->get('regency')" class="mt-2" />
             </mt-2>
         </div>
+        @endif
+
+        @if ($currentStep === 2)
         {{-- data ayah component --}}
         <hr>
         <h1 class="text-xl font-bold">Data Ayah</h1>
@@ -95,9 +101,9 @@
                 <div class="basis-1/2">
                     <x-text-input type="text" class="block mt-1 w-full" wire:model="place_birth_father" placeholder="Bondowoso"/>
                 </div>
-                <x-input-error :messages="$errors->get('father_birth_place')" class="mt-2" />
+                <x-input-error :messages="$errors->get('ather_birth_place')" class="mt-2" />
                 <div class="basis-1/4">
-                    <x-text-input type="date" class="block mt-1 w-full" wire:model="date_birth_father" placeholder="State"/>
+                    <x-text-input type="date" class="block mt-1 w-full" wire:model="father_birth_date" placeholder="State"/>
                 </div>
                 <x-input-error :messages="$errors->get('father_birth_date')" class="mt-2" />
             </div>
@@ -129,12 +135,24 @@
                 <div class="basis-1/4">
                     <x-text-input type="date" class="block mt-1 w-full" wire:model="mother_birth_date" placeholder="State"/>
                 </div>
-                <x-input-error :messages="$errors->get('mother_birt')" class="mt-2" />
+                <x-input-error :messages="$errors->get('mother_birth_date')" class="mt-2" />
             </div>
         </div>
+        @endif
     </div>
 
     <div class="flex justify-start mt-4">
-        <button class="disabled inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 active:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">Submit</button>
+
+        @if ($currentStep > 0 && $currentStep <= 2)
+        <button wire:click="decreaseStep" class="mr-4 disabled inline-flex items-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-500 active:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition ease-in-out duration-150">Kembali</button>
+        @endif
+
+        @if ($currentStep <= 2)
+        <button type="submit" class="disabled inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 active:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">Next</button>
+        @endif
+    </div>
+
+    <div wire:loading> 
+        Saving post...
     </div>
 </form>

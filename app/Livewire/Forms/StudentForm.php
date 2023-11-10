@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Forms;
 
+use App\Http\Requests\StudentRequest;
 use App\Models\Student;
 use Livewire\Attributes\Rule;
 use Livewire\Form;
@@ -10,19 +11,19 @@ class StudentForm extends Form
 {
 
     #[Rule('required')]
-    public $fullname;
+    public $full_name;
 
     #[Rule('required')]
     public $gender;
 
     #[Rule('required')]
-    public $placeOfBirth;
+    public $birth_place;
 
     #[Rule('required')]
-    public $dateOfBirth;
+    public $birth_date;
 
     #[Rule('required')]
-    public $homeAddress;
+    public $home_address;
 
     #[Rule('required')]
     public $religion;
@@ -31,50 +32,45 @@ class StudentForm extends Form
     public $kindergarten;
 
     #[Rule('required')]
-    public $kindergartenAddress;
+    public $kindergarten_address;
 
     #[Rule('required')]
     public $village;
 
     #[Rule('required')]
-    public $subdistrict;
+    public $sub_district;
 
     #[Rule('required')]
     public $regency;
 
     #[Rule('required')]
-    public $fatherName;
+    public $father_name;
 
     #[Rule('required')]
-    public $fatherOccupation;
+    public $father_occupation;
 
     #[Rule('required')]
-    public $fatherAddress;
+    public $father_address;
 
     #[Rule('required')]
-    public $fatherBirthPlace;
+    public $father_birth_place;
 
     #[Rule('required')]
-    public $fatherBirthDate;
+    public $father_birth_date;
 
     #[Rule('required')]
-    public $motherName;
+    public $mother_name;
 
     #[Rule('required')]
-    public $motherOccupation;
+    public $mother_occupation;
 
     #[Rule('required')]
-    public $motherAddress;
+    public $mother_address;
 
     #[Rule('required')]
-    public $motherBirthPlace;
+    public $mother_birth_place;
 
     #[Rule('required')]
-    public $motherBirthDate;
-
-    public function store()
-    {
-        Student::create($this->all());
-    }
+    public $mother_birth_date;
 
 }

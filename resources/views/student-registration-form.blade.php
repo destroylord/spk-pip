@@ -19,11 +19,10 @@
     <div class="w-full mx-auto">
       <div class="flex justify-center">
         <div class="w-full lg:block hidden">
-          <img src="{{ asset('img/img-hero.jpg') }}" alt="logo" class="object-cover h-screen">
+          {{-- <img src="{{ asset('img/img-hero.jpg') }}" alt="logo" class="object-cover h-screen"> --}}
         </div>
         <div class="lg:w-2/4 w-full overflow-y-auto h-screen shadow-lg border-spacing-4 px-4 py-4 rounded">
           <p class="text-2xl mb-4 font-bold text-left">Pendaftaran Siswa Baru</p>
-          <h1 class="text-xl">Biodata Diri</h1>
           <livewire:student.student />
         </div>
       </div>
