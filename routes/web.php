@@ -3,11 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', fn() => to_route('form-registration-student'));
+Route::get('/', fn() => view('welcome'))->name('welcome');
 
-Route::get('form-pendaftaran-siswa', function () {
-   return view('student-registration-form'); 
-})->name('form-registration-student');
+Route::get('form-pendaftaran-siswa', fn () => view('student-registration-form'))->name('form-registration-student');
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])
