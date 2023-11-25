@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\Student\StudentController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', fn() => view('welcome'))->name('welcome');
 
-Route::get('form-pendaftaran-siswa', fn () => view('student-registration-form'))->name('form-registration-student');
+Route::get('form-pendaftaran-siswa', [StudentController::class, 'registration'])->name('registration.student');
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])
