@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="front/assets/css/tiny-slider.css">
 		<link rel="stylesheet" href="front/assets/css/glightbox.min.css">
 		<link rel="stylesheet" href="front/assets/css/main.css">
+        
     </head>
     <body>
 

@@ -1,4 +1,6 @@
+@extends('templates.app')
 
+@section('content')
         <!-- ========================= preloader start ========================= -->
         <div class="preloader">
             <div class="loader">
@@ -429,3 +431,4 @@
         </a>
         
 
+@endsection
