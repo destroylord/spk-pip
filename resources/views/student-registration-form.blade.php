@@ -7,7 +7,7 @@
       <small class="flex-grow-1 ms-3">Bergabunglah dengan kami! Isi formulir pendaftaran siswa baru untuk memulai perjalanan pendidikan yang menarik. Dengan fasilitas modern dan kurikulum inovatif, kami membuka pintu untuk pertumbuhan akademis dan perkembangan pribadi Anda. Segera daftar dan jadilah bagian dari komunitas pendidikan yang inspiratif</small>
     </div>
   </div>
-  <div class="row d-flex justify-content-center mt-5">
+  <div class="row d-flex justify-content-center mt-5">qw
     <div class="col-lg-10 col-sm-12">
       <form action="#">
         <h3 class="text-mute">Biodata Diri</h3>
@@ -129,6 +129,8 @@
                 <x-input-error :messages="$errors->get('birth_date')" class="mt-2" />
             </div>
         </div>
+        <label for="">Penerima KIP</label>
+        <input type="checkbox">
         <div class="col-12">
             <button class="btn btn-primary" type="submit">Simpan</button>
         </div>
